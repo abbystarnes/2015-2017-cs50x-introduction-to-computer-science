@@ -1,0 +1,19 @@
+0.  BMP 16M, GIF 256, JPEG 16M, PNG 256T 
+1.  GIF
+2.  lossy: reduces a file by permanently deleting certain, especially redundant, information. lossless: every bit of data originally in the file remains after the file is uncompressed.
+3.  JPEG
+4.  the pointers to the file are deleted
+5.  you can physically destroy the harddrive, or overwrite it using a sanitation tool
+6.  stdint.h declares sets of integer types with specific widths
+7.  the advantage of using uint8_t, uint32_t, inth32_t, and uint16_t is that they specify exact integer widths universally accross different operating systems.
+7.  BYTE 8 bit, DWORD 32 bit, LONG 32 bit, WORD 16 bit
+9.  42 4D in HEX (0x42 0x4D)
+10. bf size - The size, in bytes, of the bitmap file. bi size - The number of bytes required by the structure.
+11. negative bi height - the bitmap is a top-down DIB and its origin is the upper-left corner.
+12. biBitCount determines number of bits per pixel (eg number of colors allowed)
+13. if the user didn't enter a second argument (the name of the file to output the copied bmp to), then writing to it won't be possible, and attempting to will return NULL.
+14. the third argument fread takes is for the nubmer of blocks, or number of times to read the chunk of code given. for our purposes, we only ever want it to read the code once.
+15. 1, both by calculation and because 3 (width) + 1 (padding) = 4, and we want the scanline width to be divisible by 4.
+16. Use fseek when you want to change the offset of the file pointer fp
+17. SEEK_CUR sets the from_where of the file pointer, fp, relative to its current location
+18. A young smiling man with a tie.

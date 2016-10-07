@@ -1,0 +1,107 @@
+/**
+ * recover.c
+ *
+ * Computer Science 50
+ * Problem Set 4
+ *
+ * Recovers JPEGs from a forensic image.
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char* argv[])
+{
+    // char* str;
+    
+    // str = (char*) malloc(512);
+    
+    // printf("%c\n", *str);
+    
+    // int size;
+
+printf("How big of a string would you like to store?\n");
+
+scanf("%d", &size);
+
+printf("What string would you like to store?\n");
+
+string str = (string)malloc(size * sizeof(char));
+
+scanf("%s", str);
+
+printf("%s\n", str);
+
+free(str);
+
+    // int* block;
+    
+    // block = (int*)malloc(512);
+    
+    // printf("%lu\n", sizeof(block));
+    
+    
+    // char * block = (string)malloc(size * 54));
+    // scanf("%s", block);
+    // printf("%s\n", block);
+    // free(block); 
+    
+    // FILE* file = fopen("card.raw", "r");
+    // if (inptr == NULL)
+    // {
+    //     printf("Could not open %s.\n", infile);
+    //     return 2;
+    // }
+    
+    // char * block;
+    
+    // fread(block, 512, 50, FILE * file);
+    
+    // fclose(file)
+}
+
+
+// open file
+
+// read file block by block
+
+//while files <= 50 
+
+// if first 4 bytes are jpeg, write block to new file named 001
+    // write block to same file until block contains 4 sp bytes
+
+// if block contains 4 sp bytes,
+    // write block to new file named 002
+    
+// if 
+
+
+// open up file
+
+// make variable malloc block size
+
+// read file block by block
+
+// while x < 50
+// if block is jpg start
+//     open file x/50
+//     write block to file x/50
+//         if next block != new jpg
+//         write to file x/50
+//         else write to file x++/50
+//         x ++
+        
+
+// int size;
+
+
+
+        
+        
+        
+        
+        
+    
+    
+    
+    
