@@ -1,0 +1,12 @@
+0.  A pneumoconiosis caused by inhalation of very fine silicate or quartz dust; also the longest word in the dictionary.
+1.  Returns resource usage measures for who, which can be one of the following: self, children, thread
+2.  16
+3.  variable parameters
+4.  Read through characters in text file one at a time until end of file. If the character is alphabetical or an apostrophe, add it to the word array. If string is too long to be a word, advance past it and reset index to 0. If word contains numbers, ignore it
+. If found a whole word, end the word. If word is misspelled, print out the word.
+5.  In general, avoid fscanf in reading because it cannot handle a file correctly unless it is perfectly formatted. fgets works better, because you can read each line and parse out needed pieces.
+6.  check and load are of type const because you don't want them to change in the process of running.
+7.  I used a trie. Inside each node are 26 pointers to identical child nodes which map to a-z, and "'" (the 26th child node)
+8.  My code is taking 0.13 seconds to run in total. 
+9.  I have not yet made any changes to get it performing faster. I'm just glad it's working!
+10. I'm sure there are some, I have not attempted just yet.

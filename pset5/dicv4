@@ -1,0 +1,120 @@
+/**
+ * dictionary.c
+ *
+ * Computer Science 50
+ * Problem Set 5
+ *
+ * Implements a dictionary's functionality.
+ */
+
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h> 
+#include "dictionary.h"
+#include <ctype.h>
+#include <string.h>
+
+
+    typedef struct node
+    {
+        bool is_word;
+        struct node* children[27];
+    } node;
+    
+    node* root;
+    
+    node* temp;
+    
+    int a = 97;
+
+    int index = 0;
+    
+/**
+ * Returns true if word is in dictionary else false.
+ */
+bool check(const char* word)
+{
+    for (int x = 0; x <= strlen(word); x++) {
+        int letter = word[x];
+        
+        root = root->children[letter - a];
+        
+        if (root == NULL) {
+            return false;
+            root = temp;
+        }
+        
+        if ((x = strlen(word)) && (root->is_word = true) ) {
+            return true;
+        }
+        
+        
+    };
+    
+    return false;
+
+}
+
+/**
+ * Loads dictionary into memory.  Returns true if successful else false.
+ */
+bool load(const char* dictionary)
+{
+
+    
+    root = malloc (sizeof (node));
+    temp = root;
+
+    FILE* fp = fopen(dictionary, "r"); 
+    if (fp == NULL) 
+    {
+        printf("Could not open %s.\n", dictionary);
+        unload();
+        return 1;
+    }
+    
+    for (int c = fgetc(fp); c != EOF; c = fgetc(fp)) { // read file character by character
+        index = 1;
+        if (isalpha(c) || (c == '\'' && index > 0)) // if character is a letter in a word
+        {
+            if (root->children[c - a] == NULL) {
+                root->children[c - a] = malloc (sizeof (node));
+                printf("adding a new node child \n");
+                printf("%c\n", c);
+            }
+            
+            root = root->children[c - a];
+        }
+            
+        else if (index > 0)  // if reading a word and it's not alphabetical or an apostrophe, end word & reset index to 0
+        {
+            
+            root->is_word = true;
+            index = 0;
+            root = temp;
+            printf("END WORD\n");
+        }
+        
+    }
+    
+     return true;
+}
+
+
+/**
+ * Returns number of words in dictionary if loaded else 0 if not yet loaded.
+ */
+unsigned int size(void)
+{
+    // TODO
+    return 0;
+}
+
+/**
+ * Unloads dictionary from memory.  Returns true if successful else false.
+ */
+bool unload(void)
+{
+    // TODO
+    return false;
+}
