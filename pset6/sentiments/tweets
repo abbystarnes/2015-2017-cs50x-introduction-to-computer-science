@@ -1,0 +1,36 @@
+#!/usr/bin/env python3
+import sys
+from helpers import get_user_timeline
+import nltk
+from nltk.tokenize import TweetTokenizer
+from analyzer import Analyzer
+from termcolor import colored
+# TODO
+def main():
+    # accept a command line arg, twitter screenname
+    # queries API for user's 50 most recent tweets
+    # print each tweet's score & text colored green, red or yellow
+    if len(sys.argv) != 2:
+        sys.exit("Usage: ./smile word")
+    screen_name = sys.argv[1]
+    # print(screen_name)
+    tweets = get_user_timeline(screen_name, count=50)
+    # print(tweets, 'tweets')
+    # results = Analyzer.analyze(self, tweets)
+    # print(results, 'results')
+    
+    # instantiate analyzer
+    analyzer = Analyzer('positive-words.txt', 'negative-words.txt')
+
+    # analyze word
+    for tweet in tweets:
+        score = analyzer.analyze(tweet)
+        if score > 0.0:
+            print(colored(tweet, "green"))
+        elif score < 0.0:
+            print(colored(tweet, "red"))
+        else:
+            print(colored(tweet, "yellow"))
+
+if __name__ == "__main__":
+    main()

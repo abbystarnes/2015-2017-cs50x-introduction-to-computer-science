@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form action="{{ url_for('sell') }}" method="post">
+        <fieldset>
+            <div class="form-group">
+                <select name="selected_symbol">
+                    {% for symbol in symbols %}
+                        <option value="{{ symbol }}">{{ symbol }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-default" type="submit">Sell All of Selected Stock</button>
+            </div>
+        </fieldset>
+    </form>
+{% endblock %}
